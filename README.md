@@ -23,4 +23,4 @@
 3. 채널 목록을 표시
 
 
-![최종목표-노션](https://spiny-air-e97.notion.site/Youtube-md-085edbd65a6e4ca28a758114707843f4)
+[최종목표-노션](https://spiny-air-e97.notion.site/Youtube-md-085edbd65a6e4ca28a758114707843f4)
