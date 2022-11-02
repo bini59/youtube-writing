@@ -1,0 +1,136 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        document.cookie = "safeCookie1=https://www.youtube-nocookie.com; SameSite=Lax"; 
+        document.cookie = "safeCookie2=https://www.youtube-nocookie.com";  
+        document.cookie = "crossCookie=https://www.youtube-nocookie.com; SameSite=None; Secure";
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/sidebar.css">
+    <link rel="stylesheet" href="../stylesheets/topmenu.css">
+    <link rel="stylesheet" href="../stylesheets/container.css">
+    <link rel="stylesheet" href="../stylesheets/list.css">
+    <link rel="stylesheet" href="../stylesheets/markdown.css">
+
+    
+</head>
+<body>
+    <div class="wrapper">
+        <section class="sidebar">
+            <!-- logo section -->
+            <div class="logo">
+                <img src="#" alt="logo">
+            </div>
+            <!-- logo section end -->
+            <!-- search input -->
+            <!-- 채널 검색 -->
+            <div class="search">
+                <input type="text" placeholder="Search...">
+                <i class="fas fa-search"></i>
+            </div>
+            <!-- search input end -->
+            <!-- sidebar menu -->
+            <!-- 즐겨찾기 리스트 -->
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-home"></i></span>
+                            <span class="title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-user"></i></span>
+                            <span class="title">Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-users"></i></span>
+                            <span class="title">Users</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+                            <span class="title">Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-chart-line"></i></span>
+                            <span class="title">Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-cog"></i></span>
+                            <span class="title">Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- sidebar menu end -->
+        </section>
+        <section class="top-menu"></section>
+        <section class="container">
+            <div class="video video-container editor-active video-active">
+                <div class="video-preview">
+                    <img class="video-thumbnail" src="../images/thumbnail.png">
+                    <div class="video-info">
+                        <div class="video-title">( 제목 부분 )</div>
+                        <div class="video-detail">
+                            <span class="video-description">( 상세 설명 : xxxxx )</span>
+                            <span class="video-date">( 날짜 : 20xx-xx-xx ) </span>
+                        </div>
+                    </div>
+                    <div class="video-toggle-md">
+                        <div class="video-toggle-btn">
+                            🔽
+                        </div>
+                    </div>
+                </div>
+                <iframe class="video video-youtube" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/GxZc7GQoaFs"></iframe>
+                <div class="video-write">
+                    <div class="video-write-md" contenteditable="true"></div>
+                    <div class="video-write-view markdown-body"></div>
+                </div>
+            </div>
+
+            <div class="video video-container">
+                <div class="video-preview">
+                    <img class="video-thumbnail" src="../images/thumbnail.png">
+                    <div class="video-info">
+                        <div class="video-title">( 제목 부분 )</div>
+                        <div class="video-detail">
+                            <span class="video-description">( 상세 설명 : xxxxx )</span>
+                            <span class="video-date">( 날짜 : 20xx-xx-xx ) </span>
+                        </div>
+                    </div>
+                    <div class="video-toggle-md">
+                        <div class="video-toggle-btn">
+                            🔽
+                        </div>
+                    </div>
+                </div>
+                <iframe class="video video-youtube" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                <div class="video-write">
+                    <div class="video-write-md" contenteditable="true"></div>
+                    <div class="video-write-view markdown-body"></div>
+                </div>
+            </div>
+
+
+        </section>
+    </div>
+
+    <script src="../javascripts/list.js"></script>
+
+</body></html>
