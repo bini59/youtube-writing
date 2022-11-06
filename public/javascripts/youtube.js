@@ -93,17 +93,25 @@ const loadVideos = async (id) => {
  * @param {string} channel_url 
  */
 const loadChannelId = async (channel_url, callback) => {
-    const name = channel_url.split("/").pop()
-    const res = await fetch('http://localhost:3000/youtube/channel/id?name=' + name, {
-        method: 'GET',
-        // mode: 'no-cors',
-        // responseType: 'json',
-        
-        headers: {
-            'Accept': 'application/json',
-        }
-    })
-    const json = await res.json();
-    await loadVideos(json.id);
+    let ch_id;
+
+    const splited = channel_url.split("/");
+
+    const name = splited[splited.length - 1];
+    const type = splited[splited.length - 2];
+    if (type === "channel") {
+        ch_id = name;
+    }
+    else if (type === "c") {
+        const res = await fetch('http://localhost:3000/youtube/channel/id?name=' + name, {
+            headers: {
+                'Accept': 'application/json',
+            }
+        })
+        const json = await res.json();
+        ch_id = json.id;
+    }
+    
+    await loadVideos(ch_id);
     callback();
 }
