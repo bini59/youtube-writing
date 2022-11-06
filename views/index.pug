@@ -1,5 +1,97 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  script.
+    document.cookie = "safeCookie1=https://www.youtube-nocookie.com; SameSite=Lax";
+    document.cookie = "safeCookie2=https://www.youtube-nocookie.com";
+    document.cookie = "crossCookie=https://www.youtube-nocookie.com; SameSite=None; Secure";
+  script(src='https://cdn.jsdelivr.net/npm/marked/marked.min.js')
+  link(rel='stylesheet' href='/stylesheets/style.css')
+  link(rel='stylesheet' href='/stylesheets/sidebar.css')
+  link(rel='stylesheet' href='/stylesheets/topmenu.css')
+  link(rel='stylesheet' href='/stylesheets/container.css')
+  link(rel='stylesheet' href='/stylesheets/list.css')
+  link(rel='stylesheet' href='/stylesheets/markdown.css')
+.wrapper
+  section.sidebar
+    // logo section
+    .logo
+      img(src='#' alt='logo')
+    // logo section end
+    // search input
+    // 채널 검색
+    .search
+      input(type='text' placeholder='Search...')
+      i.fas.fa-search
+    // search input end
+    // sidebar menu
+    // 즐겨찾기 리스트
+    .sidebar-menu
+      ul
+        li
+          a(href='#')
+            span.icon
+              i.fas.fa-home
+            span.title Dashboard
+        li
+          a(href='#')
+            span.icon
+              i.fas.fa-user
+            span.title Profile
+        li
+          a(href='#')
+            span.icon
+              i.fas.fa-users
+            span.title Users
+        li
+          a(href='#')
+            span.icon
+              i.fas.fa-shopping-cart
+            span.title Orders
+        li
+          a(href='#')
+            span.icon
+              i.fas.fa-chart-line
+            span.title Analytics
+        li
+          a(href='#')
+            span.icon
+              i.fas.fa-cog
+            span.title Settings
+    // sidebar menu end
+  section.top-menu
+  section.container
+    .video.video-container.editor-active.video-active
+      .video-preview
+        img.video-thumbnail(src='../images/thumbnail.png')
+        .video-info
+          .video-title ( &#xC81C;&#xBAA9; &#xBD80;&#xBD84; )
+          .video-detail
+            span.video-description ( &#xC0C1;&#xC138; &#xC124;&#xBA85; : xxxxx )
+            span.video-date ( &#xB0A0;&#xC9DC; : 20xx-xx-xx ) 
+        .video-toggle-md
+          .video-toggle-btn
+            | &#x1F53D;
+      iframe.video.video-youtube(width='560' height='315' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='' src='https://www.youtube-nocookie.com/embed/GxZc7GQoaFs')
+      .video-write
+        .video-write-md(contenteditable='true')
+        .video-write-view.markdown-body
+    .video.video-container
+      .video-preview
+        img.video-thumbnail(src='../images/thumbnail.png')
+        .video-info
+          .video-title ( &#xC81C;&#xBAA9; &#xBD80;&#xBD84; )
+          .video-detail
+            span.video-description ( &#xC0C1;&#xC138; &#xC124;&#xBA85; : xxxxx )
+            span.video-date ( &#xB0A0;&#xC9DC; : 20xx-xx-xx ) 
+        .video-toggle-md
+          .video-toggle-btn
+            | &#x1F53D;
+      iframe.video.video-youtube(width='560' height='315' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='' src='https://www.youtube-nocookie.com/embed/tvURziwk2sw')
+      .video-write
+        .video-write-md(contenteditable='true')
+        .video-write-view.markdown-body
+script(src='/javascripts/list.js')
+script(src='/javascripts/youtube.js')
