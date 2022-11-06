@@ -62,36 +62,14 @@ head
             span.title Settings
     // sidebar menu end
   section.top-menu
+    input(type="text" id="youtubeUrl")
+    button(id="loadVideos") load
   section.container
-    .video.video-container.editor-active.video-active
-      .video-preview
-        img.video-thumbnail(src='../images/thumbnail.png')
-        .video-info
-          .video-title ( &#xC81C;&#xBAA9; &#xBD80;&#xBD84; )
-          .video-detail
-            span.video-description ( &#xC0C1;&#xC138; &#xC124;&#xBA85; : xxxxx )
-            span.video-date ( &#xB0A0;&#xC9DC; : 20xx-xx-xx ) 
-        .video-toggle-md
-          .video-toggle-btn
-            | &#x1F53D;
-      iframe.video.video-youtube(width='560' height='315' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='' src='https://www.youtube-nocookie.com/embed/GxZc7GQoaFs')
-      .video-write
-        .video-write-md(contenteditable='true')
-        .video-write-view.markdown-body
-    .video.video-container
-      .video-preview
-        img.video-thumbnail(src='../images/thumbnail.png')
-        .video-info
-          .video-title ( &#xC81C;&#xBAA9; &#xBD80;&#xBD84; )
-          .video-detail
-            span.video-description ( &#xC0C1;&#xC138; &#xC124;&#xBA85; : xxxxx )
-            span.video-date ( &#xB0A0;&#xC9DC; : 20xx-xx-xx ) 
-        .video-toggle-md
-          .video-toggle-btn
-            | &#x1F53D;
-      iframe.video.video-youtube(width='560' height='315' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='' src='https://www.youtube-nocookie.com/embed/tvURziwk2sw')
-      .video-write
-        .video-write-md(contenteditable='true')
-        .video-write-view.markdown-body
 script(src='/javascripts/list.js')
 script(src='/javascripts/youtube.js')
+script.
+  let loadBtn = document.getElementById("loadVideos");
+  loadBtn.addEventListener('click', (e)=>{
+  var url = document.getElementById("youtubeUrl").value;
+    loadChannelId(url, app);
+  })

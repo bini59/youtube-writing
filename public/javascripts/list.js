@@ -12,8 +12,8 @@ const app = (() => {
 
         applyListeners();
         
-        var video = document.querySelector(".video-youtube");
-        video.setAttribute("src", "https://www.youtube-nocookie.com/embed/GxZc7GQoaFs");
+        // var video = document.querySelector(".video-youtube");
+        // video.setAttribute("src", "https://www.youtube-nocookie.com/embed/GxZc7GQoaFs");
 	}
 	
     const applyListeners = () => {
@@ -51,5 +51,5 @@ const app = (() => {
 	}
 	
 	init();
-})();
+});
 
