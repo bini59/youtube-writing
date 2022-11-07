@@ -6,10 +6,16 @@ let temp;
 
 /**
  * 
- * @param {object} video title, description, thumbnail, videoUrl, date
+ * @param {object} video title, description, thumbnail, videoUrl, date, id
  * @returns return html element
  */
 const loadVideoHtml = (video) => {
+    // load md Data from local storage with id
+    const mdData = localStorage.getItem(video.id);
+    // if mdData is null, set empty string
+    const md = mdData ? mdData : "";
+
+
     let videoElement = document.createElement("div");
     videoElement.classList.add("video");
     videoElement.classList.add("video-container");
@@ -33,9 +39,16 @@ const loadVideoHtml = (video) => {
         </div>
         <iframe class="video video-youtube" width="560" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="${video.videoUrl}"></iframe>
         <div class="video-write">
-            <div class="video-write-md" contenteditable="true"></div>
+            <div class="video-write-wrapper">
+                <div class="video-write-md" contenteditable="true">${md}</div>
+                <div class="video-write-btns">
+                    <button class="video-write-btn write-save">저장</button>
+                    <button class="video-write-btn write-download">다운로드</button>
+                </div>
+            </div>
             <div class="video-write-view markdown-body"></div>
         </div>
+        <input type="hidden" class="video-id" value="${video.id}">
     `
     videoElement.innerHTML = videoHtml;
 
@@ -56,7 +69,8 @@ const loadVideoInfo = async (videoId) => {
         description: video.description,
         thumbnail: video.thumbnails.high.url,
         videoUrl: `https://www.youtube-nocookie.com/embed/${videoId}`,
-        date: video.publishedAt
+        date: video.publishedAt,
+        id: videoId
     }
     return videoInfo;
 }

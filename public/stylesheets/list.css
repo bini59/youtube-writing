@@ -55,12 +55,9 @@
 }
 
 .video-write .video-write-md{
-    width: calc(50% - 22px);
-    height: calc(100% - 22px);
-    padding: 10px;
-    background-color: #fff;
-    border: #000 solid 1px;
-    overflow: auto;
+    width: calc(100% - 22px);
+    height: calc(90% - 22px);
+    padding: 11px;
 }
 
 .video-write .video-write-view{
@@ -70,4 +67,62 @@
     background-color: #fff;
     border: #000 solid 1px;
     overflow: auto;
+}
+
+.video-write .video-write-wrapper{
+    width: calc(50% - 2px);
+    height: calc(100% - 2px);
+    /* padding: 10px; */
+    background-color: #fff;
+    border: #000 solid 1px;
+    overflow: auto;
+}
+
+.video-write .video-write-btns{
+    padding: 10px;
+    width: calc(100% - 20px);
+    height: calc(10% - 20px);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.video-write .video-write-btns button{
+    width: 130px;
+    color: white;
+    font-weight: 600;
+    padding: 1px 30px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.video-write .video-write-btns button:hover{
+    box-shadow: 0 2px 2px rgba(0 ,0 ,0 ,.3)
+}
+
+.video-write .video-write-btns button:active{
+    transition: all .1s ease-in-out;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .1)
+}
+
+.video-write .video-write-btns button:nth-child(1){
+    background-color: #9DDD8F;
+    margin-right: 3px;
+}
+.video-write .video-write-btns button:nth-child(1):hover {
+    background-color: #a5d59a;
+}
+.video-write .video-write-btns button:nth-child(1):active {
+    background-color: #E0F3D2;
+}
+
+.video-write .video-write-btns button:nth-child(2){
+    background-color: #00BCD4;
+}
+.video-write .video-write-btns button:nth-child(2):hover {
+    background-color: #4DD0E1;
+}
+.video-write .video-write-btns button:nth-child(2):active {
+    background-color: #B2EBF2;
 }

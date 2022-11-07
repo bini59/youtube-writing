@@ -30,7 +30,7 @@ const app = (() => {
     }
     
     const parseMD = (editor) => {
-        var viewer = editor.nextElementSibling;
+        var viewer = editor.parentElement.nextElementSibling;
 
         var text = editor.innerText;
         var html = marked.parse(text);

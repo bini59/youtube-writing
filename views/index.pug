@@ -67,9 +67,13 @@ head
   section.container
 script(src='/javascripts/list.js')
 script(src='/javascripts/youtube.js')
+script(src='/javascripts/markdown.js')
 script.
   let loadBtn = document.getElementById("loadVideos");
   loadBtn.addEventListener('click', (e)=>{
   var url = document.getElementById("youtubeUrl").value;
-    loadChannelId(url, app);
+    loadChannelId(url, ()=>{
+      app();
+      addEventToBtn();
+    });
   })
